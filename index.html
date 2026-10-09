@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slugs in the shell making chaos— Enterprise Cloud Synergy (Totally Normal Website)</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌀</text></svg>">
+</head>
+<body class="stage-0">
+
+  <!-- Canvas for particle explosions and black hole singularity -->
+  <canvas id="fx-canvas"></canvas>
+
+  <!-- CRT Scanlines and Glitch Overlay -->
+  <div id="crt-overlay" class="crt-overlay hidden"></div>
+  <div id="alarm-strobe" class="alarm-strobe hidden"></div>
+
+  <!-- Chaos HUD: Fixed Header Status -->
+  <header id="chaos-hud">
+    <div class="hud-left">
+      <div class="hud-brand">
+        <span class="hud-icon">🌀</span>
+        <span class="hud-title">CHAOS ENGINE</span>
+        <span class="status-badge stable" id="hud-status">STATUS: STABLE</span>
+      </div>
+    </div>
+    
+    <div class="hud-center">
+      <div class="entropy-bar-container">
+        <div class="entropy-label-row">
+          <span class="entropy-text">SYSTEM ENTROPY</span>
+          <span class="entropy-val" id="entropy-pct">0%</span>
+        </div>
+        <div class="entropy-track">
+          <div class="entropy-fill" id="entropy-bar" style="width: 0%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hud-right">
+      <div class="click-counter-badge">
+        <span class="counter-label">CLICKS:</span>
+        <span class="counter-num" id="click-count">0</span>
+      </div>
+      <button id="audio-toggle" class="hud-btn" title="Toggle Procedural Audio">
+        <span id="audio-icon">🔊</span> Sound: ON
+      </button>
+      <button id="quick-reset-btn" class="hud-btn reset-btn" title="Reset Universe">
+        🔄 Reset
+      </button>
+    </div>
+  </header>
+
+  <!-- Chaos Quick Tools Drawer (Unlocked as chaos rises) -->
+  <aside id="chaos-toolbox" class="chaos-toolbox hidden">
+    <div class="toolbox-header">
+      <span>🛠️ ENTROPY CONTROLS</span>
+      <button id="close-toolbox-btn">×</button>
+    </div>
+    <div class="toolbox-buttons">
+      <button class="tool-btn" id="tool-gravity-flip">🔄 Invert Gravity</button>
+      <button class="tool-btn" id="tool-spam-click">⚡ Click Storm (+10)</button>
+      <button class="tool-btn" id="tool-earthquake">🌋 Seismic Shaker</button>
+      <button class="tool-btn" id="tool-matrix">👾 Matrix Scramble</button>
+      <button class="tool-btn danger" id="tool-singularity">💥 Trigger Singularity</button>
+    </div>
+  </aside>
+
+  <!-- 3D Transform Perspective Viewport Container -->
+  <div id="world-container">
+    <div id="world-stage">
+
+      <!-- Navigation Bar (Pristine SaaS) -->
+      <nav id="corporate-nav" class="corp-element physics-target" data-weight="3">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <div class="logo-mark">▲</div>
+            <span class="logo-text">Slugs in the Shell</span>
+            <span class="version-tag">v4.2.0-stable</span>
+          </div>
+          <div class="nav-links">
+            <a href="#solutions" class="nav-link">Solutions</a>
+            <a href="#quantum" class="nav-link">Quantum Mesh</a>
+            <a href="#compliance" class="nav-link">Compliance</a>
+            <a href="#pricing" class="nav-link">Enterprise Pricing</a>
+          </div>
+          <div class="nav-actions">
+            <button class="btn-ghost corp-interactive">Sign In</button>
+            <button class="btn-primary corp-interactive glow-btn" id="main-cta-nav">Deploy Synergy</button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section id="hero-section" class="hero-section">
+        <div class="hero-content">
+          <div class="trust-badge physics-target corp-element" data-weight="1">
+            <span class="pulse-dot"></span>
+            <span class="trust-text">SOC-2 TYPE IV CERTIFIED • 99.999% REALITY UPTIME</span>
+          </div>
+
+          <h1 id="hero-heading" class="hero-title physics-target corp-element" data-weight="5">
+            Holistic Synergy for <br>
+            <span class="gradient-text" id="dynamic-headline">Next-Gen Autonomous Flux</span>
+          </h1>
+
+          <p id="hero-subtitle" class="hero-desc physics-target corp-element" data-weight="2">
+            Accelerate mission-critical zero-latency deliverables with decentralized paradigms.
+            Zero maintenance. Zero instability. Totally under control.
+          </p>
+
+          <div class="hero-cta-group physics-target corp-element" data-weight="4">
+            <button id="primary-chaos-button" class="btn-hero-primary corp-interactive">
+              <span class="btn-shine"></span>
+              <span class="btn-text">Initiate Synergistic Optimization</span>
+              <span class="click-badge">CLICK ME!</span>
+            </button>
+            <button id="secondary-btn" class="btn-hero-secondary corp-interactive">
+              Schedule Free Diagnostic Demo
+            </button>
+          </div>
+
+          <!-- Social Proof Ticker -->
+          <div class="social-proof-bar physics-target corp-element" data-weight="2">
+            <span class="proof-label">Trusted by industry titans:</span>
+            <div class="ticker-logos">
+              <span class="fake-logo">GLOBEX CORP</span>
+              <span class="fake-logo">INITECH</span>
+              <span class="fake-logo">ACME DYNAMICS</span>
+              <span class="fake-logo">WAYNE ENTERPRISES</span>
+              <span class="fake-logo">CYBERDYNE</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Enterprise Feature Grid -->
+      <section id="features-section" class="features-section">
+        <div class="section-header physics-target corp-element" data-weight="3">
+          <span class="sub-label">ARCHITECTURAL RESILIENCE</span>
+          <h2>Why Fortune 500 Trust Zenith</h2>
+        </div>
+
+        <div class="cards-grid">
+          <div class="feature-card physics-target corp-element corp-interactive" data-weight="4" id="card-1">
+            <div class="card-icon">🛡️</div>
+            <h3>Quantum Fault Tolerance</h3>
+            <p>Our algorithms preemptively isolate cognitive divergences before reality breaks down.</p>
+            <div class="card-metric">100.00% Zero-Crash Guarantee</div>
+          </div>
+
+          <div class="feature-card physics-target corp-element corp-interactive" data-weight="4" id="card-2">
+            <div class="card-icon">⚡</div>
+            <h3>Microsecond Latency</h3>
+            <p>Data packets navigate hyperspace conduits with mathematically pristine deterministic paths.</p>
+            <div class="card-metric">0.0004ms Synaptic Speed</div>
+          </div>
+
+          <div class="feature-card physics-target corp-element corp-interactive" data-weight="4" id="card-3">
+            <div class="card-icon">🧠</div>
+            <h3>Self-Healing Paradigms</h3>
+            <p>If anything were ever to go wrong (which is theoretically impossible), systems restore instantly.</p>
+            <div class="card-metric">Auto-Equilibrium Active</div>
+          </div>
+
+          <div class="feature-card physics-target corp-element corp-interactive" data-weight="4" id="card-4">
+            <div class="card-icon">🌐</div>
+            <h3>Global Mesh Redundancy</h3>
+            <p>Dispersed across 400 galactic nodes so you will never lose single-point contact.</p>
+            <div class="card-metric">Infinite Continuity</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Customer Testimonial & Guarantee Banner -->
+      <section class="testimonial-section physics-target corp-element" data-weight="3" id="testimonial-banner">
+        <div class="quote-box">
+          <p class="quote-text">"Before Zenith AI, our websites occasionally obeyed physics. Now everything is unified and nothing can possibly go wrong."</p>
+          <div class="quote-author">
+            <div class="avatar">👨‍💼</div>
+            <div>
+              <strong>Bradley Chesterfield</strong>
+              <span>Chief Paradigm Evangelist, SynergyCorp</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Corporate Footer -->
+      <footer id="corporate-footer" class="corp-element physics-target" data-weight="4">
+        <div class="footer-inner">
+          <p>© 2026 Zenith AI Systems Global LLC. All laws of physics strictly reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Agreement</a>
+            <a href="#">Terms of Existence</a>
+            <a href="#">Entropy Disclaimer</a>
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /world-stage -->
+  </div><!-- /world-container -->
+
+  <!-- The Elusive Runaway Emergency Stop Button (Spawns at Stage 4) -->
+  <div id="runaway-container" class="runaway-container hidden">
+    <button id="runaway-btn" class="runaway-btn">
+      <span class="siren-icon">🚨</span>
+      <span class="btn-text">EMERGENCY SHUTDOWN</span>
+      <span class="sub-text">CATCH ME IF YOU CAN!</span>
+    </button>
+  </div>
+
+  <!-- Popups Container (Windows XP style retro error popups) -->
+  <div id="popups-layer" class="popups-layer"></div>
+
+  <!-- Achievement Notification Toast -->
+  <div id="achievement-toast" class="achievement-toast hidden">
+    <div class="achievement-icon">🏆</div>
+    <div class="achievement-details">
+      <div class="achievement-title">ACHIEVEMENT UNLOCKED!</div>
+      <div class="achievement-desc" id="achievement-desc">First Crack in Reality</div>
+    </div>
+  </div>
+
+  <!-- Stage 4 Containment Breach Banner -->
+  <div id="containment-banner" class="containment-banner hidden">
+    <div class="marquee-content">
+      ⚠️ CRITICAL CONTAINMENT BREACH DETECTED • ENTROPY OVERFLOW • DO NOT KEEP CLICKING • REALITY DESTABILIZING ⚠️
+    </div>
+  </div>
+
+  <!-- Stage 5: Singularity & Blue Screen of Death / Reboot Terminal Modal -->
+  <div id="bsod-screen" class="bsod-screen hidden">
+    <div class="bsod-content">
+      <div class="bsod-header">:(</div>
+      <h1 class="bsod-title">Your Reality Ran into a Problem and Needs to Restart.</h1>
+      <p class="bsod-message">
+        We're just collecting some cosmic debris info, and then we'll restart for you.
+      </p>
+
+      <div class="bsod-stats-box">
+        <h3>DIAGNOSTIC ENTROPY DUMP:</h3>
+        <ul>
+          <li><strong>Total Clicks Logged:</strong> <span id="stat-clicks">0</span></li>
+          <li><strong>Peak Entropy Attained:</strong> <span id="stat-entropy">100%</span></li>
+          <li><strong>DOM Elements Detached:</strong> <span id="stat-detached">0</span></li>
+          <li><strong>Error Dialogs Spawned:</strong> <span id="stat-popups">0</span></li>
+          <li><strong>Runaway Button Chases:</strong> <span id="stat-chases">0</span></li>
+          <li><strong>Stop Code:</strong> <span class="code-highlight">KMODE_EXCEPTION_UNHANDLED_IN_THE_MULTIVERSE</span></li>
+        </ul>
+      </div>
+
+      <div class="bsod-actions">
+        <button id="big-bang-reboot-btn" class="big-bang-btn">
+          ✨ Recreate The Big Bang (Reset Universe)
+        </button>
+      </div>
+      
+      <p class="bsod-hint">Click above to restore pristine corporate equilibrium.</p>
+    </div>
+  </div>
+
+  <!-- Audio, Physics and Game Controller Scripts -->
+  <script src="audio.js"></script>
+  <script src="physics.js"></script>
+  <script src="chaos.js"></script>
+</body>
+</html>
